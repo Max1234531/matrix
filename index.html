@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Also try Paper!</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="images/Kim.PNG">
+	<script src="js/gauss.js"></script>
+</head>
+
+<header>
+	<div id="menu">
+		<ul>
+			<li><a href="pages/indev.html">Home</a></li>
+			<li><a href="#">Метод Гаусса</a></li>
+			<li><a href="pages/indev.html">Операции над матрицами</a></li>
+			<li><a href="pages/indev.html">Определители</a></li>
+			<li><a href="pages/indev.html">SecretPage</a></li>
+
+		</ul>
+	</div>
+</header>
+
+<body>
+	<div id="page">
+		<div id="left-side" class="sides">
+			<p>Так как это место пока нечем занять, держите картинки котиков!</p>
+			<div class="galery">
+				<img src="https://www.meme-arsenal.com/memes/bc425154b08b22f101f535d3868b4a59.jpg" alt="" width="75%">
+				<img src="https://kartinkin.net/uploads/posts/2022-03/1646793778_1-kartinkin-net-p-milii-kotik-kartinki-1.jpg" alt="" width="75%">
+				<img src="https://46.img.avito.st/image/1/1.04yad7a6f2Ws3r1gsDj_m0TUeWEuVHenK9R7bS7cfQ.IJD0fi394HMMdjp1ULHwt9BgtY1cgIxol7tNIhfolmk" alt="" width="75%">
+			</div>
+		</div>
+		<div id="midle">
+			<noscript>ВНИМАНИЕ! ВКЛЮЧИТЕ JS ДЛЯ КОРРЕКТНОЙ РАБОТЫ АЛГОРТМОВ</noscript>
+			<form id="initialize-table">
+				<h1>Введите размер матрицы:</h1>
+				<div id="instruction-block">
+					<div class="div-instruction">
+						<span class="instruction">количество переменных:</span>
+						<select id="cols-setter" size="1">
+							<option value="2">2</option>
+							<option value="3" selected="">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+						</select>
+					</div>
+					<div class="space-div"></div>
+					<div class="div-instruction">
+						<span class="instruction">количество строк:</span>
+						<select id="lines-setter" size="1">
+							<option value="2">2</option>
+							<option value="3" selected="">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+						</select>
+					</div>
+				</div>
+				<div id="init-btn-div"><button type="button" id="init-btn" onclick="generate_table()">Продолжить</button></div>
+			</form>
+
+			<div id="table-block">
+				<form id="main-form">
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<table id="left-table">
+										<tbody>
+											<tr class="line-1">
+											    <td class="col-1"><input type="text" id="l1" value="0"></td>
+											    <td class="col-2"><input type="text" id="l2" value="0"></td>
+											    <td class="col-3"><input type="text" id="l3" value="0"></td>
+											    <td class="col-4"><input type="text" id="l4" value="0"></td>
+											    <td class="col-5"><input type="text" id="l5" value="0"></td>
+											    <td class="col-6"><input type="text" id="l6" value="0"></td>
+											    <td class="col-7"><input type="text" id="l7" value="0"></td>
+											    <td class="col-8"><input type="text" id="l8" value="0"></td>
+											</tr>
+											<tr class="line-2">
+											    <td class="col-1"><input type="text" id="l9" value="0"></td>
+											    <td class="col-2"><input type="text" id="l10" value="0"></td>
+											    <td class="col-3"><input type="text" id="l11" value="0"></td>
+											    <td class="col-4"><input type="text" id="l12" value="0"></td>
+											    <td class="col-5"><input type="text" id="l13" value="0"></td>
+											    <td class="col-6"><input type="text" id="l14" value="0"></td>
+											    <td class="col-7"><input type="text" id="l15" value="0"></td>
+											    <td class="col-8"><input type="text" id="l16" value="0"></td>
+											</tr>
+											<tr class="line-3">
+											    <td class="col-1"><input type="text" id="l17" value="0"></td>
+											    <td class="col-2"><input type="text" id="l18" value="0"></td>
+											    <td class="col-3"><input type="text" id="l19" value="0"></td>
+											    <td class="col-4"><input type="text" id="l20" value="0"></td>
+											    <td class="col-5"><input type="text" id="l21" value="0"></td>
+											    <td class="col-6"><input type="text" id="l22" value="0"></td>
+											    <td class="col-7"><input type="text" id="l23" value="0"></td>
+											    <td class="col-8"><input type="text" id="l24" value="0"></td>
+											</tr>
+											<tr class="line-4">
+											    <td class="col-1"><input type="text" id="l25" value="0"></td>
+											    <td class="col-2"><input type="text" id="l26" value="0"></td>
+											    <td class="col-3"><input type="text" id="l27" value="0"></td>
+											    <td class="col-4"><input type="text" id="l28" value="0"></td>
+											    <td class="col-5"><input type="text" id="l29" value="0"></td>
+											    <td class="col-6"><input type="text" id="l30" value="0"></td>
+											    <td class="col-7"><input type="text" id="l31" value="0"></td>
+											    <td class="col-8"><input type="text" id="l32" value="0"></td>
+											</tr>
+											<tr class="line-5">
+											    <td class="col-1"><input type="text" id="l33" value="0"></td>
+											    <td class="col-2"><input type="text" id="l34" value="0"></td>
+											    <td class="col-3"><input type="text" id="l35" value="0"></td>
+											    <td class="col-4"><input type="text" id="l36" value="0"></td>
+											    <td class="col-5"><input type="text" id="l37" value="0"></td>
+											    <td class="col-6"><input type="text" id="l38" value="0"></td>
+											    <td class="col-7"><input type="text" id="l39" value="0"></td>
+											    <td class="col-8"><input type="text" id="l40" value="0"></td>
+											</tr>
+											<tr class="line-6">
+											    <td class="col-1"><input type="text" id="l41" value="0"></td>
+											    <td class="col-2"><input type="text" id="l42" value="0"></td>
+											    <td class="col-3"><input type="text" id="l43" value="0"></td>
+											    <td class="col-4"><input type="text" id="l44" value="0"></td>
+											    <td class="col-5"><input type="text" id="l45" value="0"></td>
+											    <td class="col-6"><input type="text" id="l46" value="0"></td>
+											    <td class="col-7"><input type="text" id="l47" value="0"></td>
+											    <td class="col-8"><input type="text" id="l48" value="0"></td>
+											</tr>
+											<tr class="line-7">
+											    <td class="col-1"><input type="text" id="l49" value="0"></td>
+											    <td class="col-2"><input type="text" id="l50" value="0"></td>
+											    <td class="col-3"><input type="text" id="l51" value="0"></td>
+											    <td class="col-4"><input type="text" id="l52" value="0"></td>
+											    <td class="col-5"><input type="text" id="l53" value="0"></td>
+											    <td class="col-6"><input type="text" id="l54" value="0"></td>
+											    <td class="col-7"><input type="text" id="l55" value="0"></td>
+											    <td class="col-8"><input type="text" id="l56" value="0"></td>
+											</tr>
+											<tr class="line-8">
+											    <td class="col-1"><input type="text" id="l57" value="0"></td>
+											    <td class="col-2"><input type="text" id="l58" value="0"></td>
+											    <td class="col-3"><input type="text" id="l59" value="0"></td>
+											    <td class="col-4"><input type="text" id="l60" value="0"></td>
+											    <td class="col-5"><input type="text" id="l61" value="0"></td>
+											    <td class="col-6"><input type="text" id="l62" value="0"></td>
+											    <td class="col-7"><input type="text" id="l63" value="0"></td>
+											    <td class="col-8"><input type="text" id="l64" value="0"></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+								<td>
+									<table id="right-table">
+										<tbody>
+											<tr class="line-1"><td><input type="text" id="r1" value="0"></td></tr>
+											<tr class="line-2"><td><input type="text" id="r2" value="0"></td></tr>
+											<tr class="line-3"><td><input type="text" id="r3" value="0"></td></tr>
+											<tr class="line-4"><td><input type="text" id="r4" value="0"></td></tr>
+											<tr class="line-5"><td><input type="text" id="r5" value="0"></td></tr>
+											<tr class="line-6"><td><input type="text" id="r6" value="0"></td></tr>
+											<tr class="line-7"><td><input type="text" id="r7" value="0"></td></tr>
+											<tr class="line-8"><td><input type="text" id="r8" value="0"></td></tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="undertable"><button type="button" id="gauss-start-btn" onclick="init_matrix()">Начать</button></div>
+					<div class="undertable" id="iteration-div">
+						<button type="button" class="iteration-btn" id="gauss-prev-btn">Предыдущий шаг (indev)</button>
+						<div class="space-div"></div>
+						<button type="button" class="iteration-btn" id="gauss-next-btn" onclick="next_step()">Следующий шаг</button>
+					</div>
+				</form>
+			</div>
+			<div id="explanation-div">
+				<p id="ex-1">Домножим строки матрицы на НОК знаменателей, чтобы привести к целым числам.</p>
+				<p id="ex-2">Сортируем матрицу по возрастанию элементов первого ненулевого столбца.</p>
+				<p id="ex-3">Вычитаем из каждой строки "главную" с соответствующим коэффицентом.</p>	
+			</div>
+			<div id="finish-div">
+				<p class="finish" id="ex-1">Ура, матрица в ступенчатом виде!</p>
+			</div>
+		</div>
+		<div id="right-side" class="sides">
+			<p>Для правой части, я тоже пока ничего не придумал, так что...</p>
+			<div class="galery">
+				<img src="https://img2.joyreactor.cc/pics/post/%D0%BC%D0%B8%D0%BB%D1%8B%D0%B9-%D0%BA%D0%BE%D1%82%D0%B8%D0%BA-6243123.jpeg" alt="" width="75%">
+				<img src="https://www.meme-arsenal.com/memes/35f8bb2e8d247a1c46f6aa5d06d32133.jpg" alt="" width="75%">
+				<img src="https://i.pinimg.com/736x/bb/38/59/bb3859f36f5dc1ddca239ad8370cc23a.jpg" alt="" width="75%">
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+<footer>Данная страница создана просто так! По всем вопросам >><a href="https://vk.com/idpike04">Pike</a></footer>
+</html>
